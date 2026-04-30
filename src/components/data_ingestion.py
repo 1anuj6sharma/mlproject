@@ -6,6 +6,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from src.components.data_transformation import DataTransformationConfig
+from src.components.data_transformation import DataTransformation
+
 
 @dataclass
 
@@ -55,4 +58,8 @@ class DataIngestion:       # It calls the data from the source and then splits i
     
 if __name__ == "__main__":
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data,test_data=obj.initiate_data_ingestion()  # It is used to call the data ingestion method and get the train and test data paths
+    
+    
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train_data,test_data) # It is used to call the data transformation method and get the train and test data arrays and the preprocessor object file path
