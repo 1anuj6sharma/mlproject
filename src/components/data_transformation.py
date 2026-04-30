@@ -13,7 +13,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 import os
 
-from src.utils import save_object, load_object  # It is used to save the preprocessor object and to load the preprocessor object
+from src.utils import save_object # It is used to save the preprocessor object and to load the preprocessor object
 
 @dataclass                    
 class DataTransformationConfig:  # it is used to store the configuration of data transformation

@@ -8,6 +8,8 @@ from dataclasses import dataclass
 
 from src.components.data_transformation import DataTransformationConfig
 from src.components.data_transformation import DataTransformation
+from src.components.model_training import ModelTrainerConfig
+from src.components.model_training import ModelTrainer
 
 
 @dataclass
@@ -62,4 +64,8 @@ if __name__ == "__main__":
     
     
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data) # It is used to call the data transformation method and get the train and test data arrays and the preprocessor object file path
+    train_arr,test_arr,_ = data_transformation.initiate_data_transformation(train_data,test_data) # It is used to call the data transformation method and get the train and test data arrays and the preprocessor object file path
+
+
+    model_trainer = ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_arr,test_arr)) # It is used to call the model trainer method and get the r2 score of the best model
