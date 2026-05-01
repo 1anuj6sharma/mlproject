@@ -4,6 +4,8 @@ import pandas as pd
 
 from sklearn.preprocessing import StandardScaler
 
+from src.pipeline.predict_pipeline import CustomData,PredictPipeline
+
 application = Flask(__name__)
 
 app=application
@@ -20,7 +22,7 @@ def predict_datapoint():
         return render_template('home.html')
     else:
         data = CustomData(
-        from src.pipeline.predict_pipeline import CustomData,PredictPipeline
+    
             gender=request.form['gender'],
             race_ethnicity=request.form['race_ethnicity'],
             parental_level_of_education=request.form['parental_level_of_education'],
