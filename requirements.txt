@@ -8,4 +8,4 @@ dill==0.3.6
 xgboost==1.7.5
 catboost==1.2
 
-#-e .   # this -e . means to install the current package in editable mode, which allows you to make changes to the code and have them reflected without needing to reinstall the package.
+-e .   # this -e . means to install the current package in editable mode, which allows you to make changes to the code and have them reflected without needing to reinstall the package.
