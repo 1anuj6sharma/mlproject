@@ -7,7 +7,12 @@ LOG_FILE = f"{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
 
 # Create logs directory ONLY
 logs_dir = os.path.join(os.getcwd(), "logs")
-os.makedirs(logs_dir, exist_ok=True)
+try:
+    os.makedirs(logs_dir, exist_ok=True)
+except Exception:
+    # If logs directory creation fails, use /tmp instead
+    logs_dir = "/tmp"
+    os.makedirs(logs_dir, exist_ok=True)
 
 # Final log file path
 LOG_FILE_PATH = os.path.join(logs_dir, LOG_FILE)
